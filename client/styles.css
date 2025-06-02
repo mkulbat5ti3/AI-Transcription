@@ -1,0 +1,143 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.header {
+    position: relative;
+    background-color: #FBFBFB; 
+    padding: 20px;
+    color: #020202;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+.header::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 2mm;
+    left: 0;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 5mm;
+    right: 0;
+}
+
+
+
+.controls {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.control-group {
+    margin: 10px;
+}
+
+.controls input,
+.controls button,
+.controls select {
+    padding: 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.controls input:focus,
+.controls select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.controls button {
+    background-color: #018758; 
+    color: #fff;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #005d3d; 
+}
+
+
+#transcription {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    height: 150px; 
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#translation {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    height: 150px; 
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transcription-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.transcription,
+.translation {
+    flex-basis: 45%; /* Adjust the width as needed */
+}
+
+@media screen and (max-width: 768px) {
+    .transcription-container {
+        flex-direction: column;
+    }
+}
+
+.label {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .controls {
+        width: 90%;
+    }
+    
+    #transcription {
+        width: 90%;
+    }
+    #translation {
+        width: 90%;
+    }
+
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Stream to WebSocket Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src='utils.js'></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Real-Time Audio Transcriber</h1>
+    </div>
+    <div class="controls">
+        <div class="control-group">
+            <label class="label" for="websocketAddress">WebSocket Address:</label>
+            <input type="text" id="websocketAddress" placeholder="ws://your-server-ip:port">
+        </div>
+        <div class="control-group">
+            <label class="label" for="chunk_length_seconds">Chunk Length (s):</label>
+            <input type="number" id="chunk_length_seconds" value="3" min="1">
+        </div>
+        <div class="control-group">
+            <label class="label" for="chunk_offset_seconds">Silence at the End of Chunk (s):</label>
+            <input type="number" id="chunk_offset_seconds" value="1" min="0">
+        </div>
+        <div class="control-group">
+            <label class="label" for="languageSelect">Language:</label>
+            <select id="languageSelect">
+                <option value="multilingual">Multilingual</option>
+                <option value="english">English</option>
+                <option value="italian">Italian</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="chinese">Chinese</option>
+                <option value="arabic">Arabic</option>
+                <option value="portuguese">Portuguese</option>
+                <option value="russian">Russian</option>
+                <option value="japanese">Japanese</option>
+                <option value="dutch">Dutch</option>
+                <option value="korean">Korean</option>
+                <option value="hindi">Hindi</option>
+                <option value="turkish">Turkish</option>
+                <option value="swedish">Swedish</option>
+                <option value="norwegian">Norwegian</option>
+                <option value="danish">Danish</option>
+                <option value="polish">Polish</option>
+                <option value="finnish">Finnish</option>
+                <option value="thai">Thai</option>
+                <option value="czech">Czech</option>
+                <option value="hungarian">Hungarian</option>
+                <option value="greek">Greek</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label class="label" for="translationLanguageSelect">Translation Language:</label>
+            <select id="translationLanguageSelect">
+                <option value="ar">Arabic</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <div class="file-archive">
+            <p><a href="http://5.193.71.220:5000/" target="_blank">File Archive</a></p>
+        </div>
+        <div class="button-group">
+            <button onclick="initWebSocket()" class="connect-button">Connect</button>
+            <span id="webSocketStatus">Not Connected</span>
+            <button id="startButton" onclick='startRecording()' disabled>Start Streaming</button>
+            <button id="stopButton" onclick='stopRecording()' disabled>Stop Streaming</button>
+        </div>
+    </div>
+    <div class="transcription-container">
+        <div class="transcription">
+            <h2>Transcription:</h2>
+            <div id="transcription"></div>
+        </div>
+        <div class="translation">
+            <h2>Translation:</h2>
+            <div id="translation"></div>
+        </div>
+    </div>
+</body>
+</html>

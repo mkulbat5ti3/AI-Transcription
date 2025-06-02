@@ -1,0 +1,29 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Audio data and logs
+audio_files/
+archive/
+
+# Secrets and configs
+.env
+.env.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor/IDE settings
+.vscode/
+.idea/
+
+# Node artifacts (if any)
+node_modules/
